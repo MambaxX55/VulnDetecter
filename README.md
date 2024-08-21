@@ -20,6 +20,7 @@ VulnHubDetecter is a small utility/tool that allows us to discover the IP addres
 - There are two options to choose from: the colored version or the default version.
 
 In my case, rather than as a bash file, I have it defined as a function within the bash (.zshrc) for faster usage.
+
 ## ⚙️**Usage Instructions** ⚙️
 
 You need to be **root** to use the tool. If you try to use it without root privileges, the tool will detect this and prompt for the password to execute the command with the necessary privileges.
@@ -39,9 +40,17 @@ If you want to run it as `script.sh`, you first need to give it execution permis
 ```
 
 You can view the appearance of the program in the **Images** folder.
+
 ## 👎​ **Considerations and Potential Issues** 👎​
 
 To discover the IP of the machine, VulnHubDetecter looks for the MAC address 08:00:27, which corresponds to VirtualBox (VB) services. This is because most VulnHub machines are designed for VB. Therefore, if you have any other VB machines running apart from the one you are using, it is quite likely that it will detect those instead of the VulnHub machine. In that case, it may not work correctly. In that case the tool **would not** work.
+
+Some solutions to this problem would be:
+
+- Close the other running VB virtual machines (except for the one where you are using the tool).
+- Manually change the MAC address in the network settings of the other machines so that it does not match 08:00:27.
+
+If you use VMWare, this problem should not occur as the MAC addresses would not match, unless there is another machine designed for VB that is active.
 
 ## 👨‍💻 **Farewell**
 
@@ -50,6 +59,7 @@ The tool is very simple and could be much more developed, but it was created fro
 Bye 👋🐍
 
 --------
+
 ## **Spanish**
 
 -------
@@ -92,6 +102,14 @@ Podéis visualizar el aspecto del programa en la carpeta **Images**.
 ##  👎​ **Consideraciones y posibles errores** 👎​
 
 Para descubrir la IP de la máquina, VulnHubDetecter busca en los hosts la dirección MAC **08:00:27**, la cual corresponde a los servicios de Virtual Box (VB). Esto es así porque la mayoría de máquinas VulnHub están diseñadas para VB. Por lo tanto si estás corriendo alguna otra máquina de VB diferente a la que estás usando, es bastante probable que la detecte en lugar de detectar la de VulnHub. En ese caso **NO** funcionaría.
+
+Algunas soluciones a este problema serían:
+
+- Cerrar las otras máquinas virtuales de VB que estén corriendo (excepto en la que usas la herramienta).
+- Cambiar manualmente en la configuración de red de las otras máquinas la dirección MAC para que no coincida con 08:00:27.
+
+Si usas VMWare no debería ocurrir este problema ya que la MAC no sería coincidente, a no ser que haya otra máquina diseñada para VB activa. 
+
 
 ## 👨‍💻​ **Despedida**
 
